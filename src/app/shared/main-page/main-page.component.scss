@@ -74,14 +74,14 @@ section {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 400px) {
   section {
     background-image: url('../../../assets/images/fundo-pratos.jpg');
     background-position: center;
 
     h2 {
-      width: 80%;
-      text-align: center;
+      position: relative;
+      width: 100%;
       top: 40%;
       left: 50%;
       transform: translate(-50%, -40%);
@@ -96,10 +96,14 @@ section {
     }
 
     button.order {
+      position: relative;
       top: 55vh;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     button.scroll {
+      bottom: -2px;
       left: 50%;
       width: 74px;
       height: 52px;
