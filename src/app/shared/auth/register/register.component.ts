@@ -1,4 +1,8 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
+import { UserModel } from './../../Models/user-model';
+import { AuthService } from './../../Services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  userModel: UserModel = new UserModel()
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  onRegister(): void {
+    this.authService.register(this.userModel).subscribe(() => {
+      this.router.navigate(['/'])
+    })
+  }
 }

@@ -4,15 +4,28 @@
     <h2>Cadastro</h2>
     <mat-form-field>
       <mat-label>Usuário</mat-label>
-      <input class="bringForm" matInput type="text">
+      <input
+        class="bringForm"
+        name="username"
+        matInput type="text"
+        [(ngModel)]="userModel.username"
+        #userInput="ngModel">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input class="bringForm" matInput type="email">
+      <input
+        class="bringForm"
+        matInput type="email"
+        [(ngModel)]="userModel.email"
+        #emailInput="ngModel">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Senha</mat-label>
-      <input class="bringForm" matInput type="password">
+      <input
+        class="bringForm"
+        matInput type="password"
+        [(ngModel)]="userModel.password"
+        #passwordInput>
     </mat-form-field>
     <button mat-button>Cadastrar</button>
     <br>
