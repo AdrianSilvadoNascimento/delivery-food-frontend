@@ -1,0 +1,53 @@
+<section>
+  <nav>
+    <ul class="d-flex">
+      <li class="p-2">
+        <a href="">Ofertas do Dia</a>
+      </li>
+      <li class="direita p-2">
+        <a href="">Os Mais Pedidos</a>
+      </li>
+      <li>
+        <h1 [routerLink]="['/']">Nossa Marca</h1>
+      </li>
+      <li class="esquerda p-2">
+        <a href="">Fale Conosco</a>
+      </li>
+      <li class="p-2">
+        <a href="">Cardápio</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="user-section">
+    <ul class="d-flex justify-content-end">
+      <li class="p-2">
+        <p>Olá, Usuário <i class="fas fa-user-circle"></i></p>
+      </li>
+      <li class="p-2">
+        <a [routerLink]="['/register']"><u>Register</u></a>
+      </li>
+      <li class="p-2">
+        <a [routerLink]="['/login']"><u>Login</u></a>
+      </li>
+      <li class="p-2">
+        <a href=""><u>Logout</u></a>
+      </li>
+    </ul>
+  </div>
+  <div class="menu-mobile">
+    <mat-menu #appMenu="matMenu">
+      <div class="buttons-mobile">
+        <button mat-menu-item>Ofertas do Dia</button>
+        <button mat-menu-item>Os Mais Pedidos</button>
+        <button mat-menu-item>Fale Conosco</button>
+        <button mat-menu-item>Cardápio</button>
+        <button mat-menu-item [routerLink]="['/register']">Register</button>
+        <button mat-menu-item [routerLink]="['/login']">Login</button>
+        <button mat-menu-item>Logout</button>
+      </div>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <i class="fas fa-bars fa-lg"></i>
+    </button>
+  </div>
+</section>

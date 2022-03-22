@@ -1,0 +1,158 @@
+@font-face {
+  font-family: 'SweetyRasty';
+  src: local("SweetyRasty"), url("../../../assets/fonts/sweety-rasty.otf");
+}
+
+@font-face {
+  font-family: 'Ginsthies';
+  src: local("Ginsthies"), url("../../../assets/fonts/Ginchiest.ttf");
+}
+
+@font-face {
+  font-family: 'BlackWay';
+  src: local("BlackWay"), url("../../../assets/fonts/BlackWay.otf");
+}
+
+section h1 {
+  position: relative;
+  top: 4vh;
+  font-family: 'Ginsthies';
+  font-size: 4em;
+}
+
+section h2 {
+  right: 15%;
+  bottom: 48.5%;
+  font-family: 'BlackWay';
+  font-size: 5em;
+}
+
+section h3 {
+  right: 26%;
+  bottom: 60%;
+}
+
+section h2, section h3 {
+  font-family: 'BlackWay';
+  position: absolute;
+}
+
+section a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+section ul {
+  list-style: none;
+}
+
+section ul li {
+  margin-left: 30px;
+}
+
+section nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5vh;
+  margin-left: -8vw;
+}
+
+section button.order {
+  border: 2px solid #FFF;
+  width: 275px;
+  height: 76px;
+  color: #FFF;
+  position: absolute;
+  bottom: 30%;
+  right: 20%;
+  background-color: transparent;
+}
+
+section button.scroll {
+  height: 145px;
+  width: 135px;
+  position: absolute;
+  bottom: 9px;
+  right: 9px;
+  border-top-left-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #FFF;
+  cursor: pointer;
+  -webkit-animation: scrollButton 2.5s ease-out;
+          animation: scrollButton 2.5s ease-out;
+}
+
+section button i {
+  font-size: 2em;
+}
+
+section div.menu-mobile {
+  display: none;
+  width: 45px;
+}
+
+@-webkit-keyframes scrollButton {
+  from {
+    padding-bottom: 100px;
+  }
+  to {
+    padding-bottom: 0;
+  }
+}
+
+@keyframes scrollButton {
+  from {
+    padding-bottom: 100px;
+  }
+  to {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section h2, section h3 {
+    width: 80%;
+    text-align: center;
+    font-size: 3.2em;
+    left: 50% !important;
+    -webkit-transform: translate(-50%) !important;
+            transform: translate(-50%) !important;
+  }
+  section h3 {
+    font-size: 2.2em;
+    font-family: 'BlackWay';
+  }
+  section button.scroll {
+    left: 50%;
+    width: 74px;
+    height: 52px;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+  section button.scroll i {
+    font-size: 1.5em;
+  }
+  section div.menu-mobile {
+    display: block;
+    position: absolute;
+    left: 85%;
+    top: 5vh;
+  }
+  section div.menu-mobile div.buttons-mobile {
+    text-align: center;
+  }
+  section div.user-section {
+    display: none;
+  }
+  section nav {
+    display: none;
+  }
+}
+/*# sourceMappingURL=main-page.component.css.map */

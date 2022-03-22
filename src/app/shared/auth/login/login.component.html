@@ -1,0 +1,31 @@
+<section class="auth-section">
+  <button class="button-back" [routerLink]="['/']"><i class="fas fa-long-arrow-alt-left"></i></button>
+  <form (ngSubmit)="onLogin()">
+    <article class="form">
+      <h2>Login</h2>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          class="bringForm"
+          matInput type="email"
+          name="email"
+          [(ngModel)]="userModel.email"
+          #emailInput="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input
+          class="bringForm"
+          matInput type="password"
+          name="password"
+          [(ngModel)]="userModel.password"
+          #passwordInput="ngModel">
+      </mat-form-field>
+      <button type="submit" mat-button>Entrar</button>
+      <br>
+      <div class="rota">
+        <a [routerLink]="['/register']">Ainda não possui conta?</a>
+      </div>
+    </article>
+  </form>
+</section>

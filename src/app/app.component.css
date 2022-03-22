@@ -1,0 +1,21 @@
+.routes {
+  width: 100vw;
+  height: 100vh;
+  border: 10px solid #FFF;
+  background-image: url("../assets/images/fundo-frango.jpg");
+  background-size: cover;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 480px) {
+  .routes {
+    background-image: url("../assets/images/fundo-pratos.jpg") !important;
+    background-position: center;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+/*# sourceMappingURL=app.component.css.map */

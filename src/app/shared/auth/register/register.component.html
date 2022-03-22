@@ -1,0 +1,23 @@
+<section class="auth-section">
+  <button class="button-back" [routerLink]="['/']"><i class="fas fa-long-arrow-alt-left"></i></button>
+  <article class="form">
+    <h2>Cadastro</h2>
+    <mat-form-field>
+      <mat-label>Usuário</mat-label>
+      <input class="bringForm" matInput type="text">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input class="bringForm" matInput type="email">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Senha</mat-label>
+      <input class="bringForm" matInput type="password">
+    </mat-form-field>
+    <button mat-button>Cadastrar</button>
+    <br>
+    <div class="rota">
+      <a [routerLink]="['/login']">Já possui conta?</a>
+    </div>
+  </article>
+</section>
