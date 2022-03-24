@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegister(): void {
+    console.log(this.userModel)
     this.authService.register(this.userModel).subscribe(() => {
       this.router.navigate(['/'])
     })

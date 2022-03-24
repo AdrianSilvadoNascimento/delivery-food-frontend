@@ -1,36 +1,40 @@
 <section class="auth-section">
   <button class="button-back" [routerLink]="['/']"><i class="fas fa-long-arrow-alt-left"></i></button>
   <article class="form">
-    <h2>Cadastro</h2>
-    <mat-form-field>
-      <mat-label>Usuário</mat-label>
-      <input
-        class="bringForm"
-        name="username"
-        matInput type="text"
-        [(ngModel)]="userModel.username"
-        #userInput="ngModel">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input
-        class="bringForm"
-        matInput type="email"
-        [(ngModel)]="userModel.email"
-        #emailInput="ngModel">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Senha</mat-label>
-      <input
-        class="bringForm"
-        matInput type="password"
-        [(ngModel)]="userModel.password"
-        #passwordInput>
-    </mat-form-field>
-    <button mat-button>Cadastrar</button>
-    <br>
-    <div class="rota">
-      <a [routerLink]="['/login']">Já possui conta?</a>
-    </div>
+    <form (ngSubmit)="onRegister()">
+      <h2>Cadastro</h2>
+      <mat-form-field>
+        <mat-label>Usuário</mat-label>
+        <input
+          class="bringForm"
+          name="username"
+          matInput type="text"
+          [(ngModel)]="userModel.username"
+          #userInput="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input
+          class="bringForm"
+          name="email"
+          matInput type="email"
+          [(ngModel)]="userModel.email"
+          #emailInput="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input
+          class="bringForm"
+          name="password"
+          matInput type="password"
+          [(ngModel)]="userModel.password"
+          #passwordInput="ngModel">
+      </mat-form-field>
+      <button type="submit" mat-button>Cadastrar</button>
+      <br>
+      <div class="rota">
+        <a [routerLink]="['/login']">Já possui conta?</a>
+      </div>
+    </form>
   </article>
 </section>
