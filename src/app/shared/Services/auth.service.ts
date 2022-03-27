@@ -41,6 +41,9 @@ export class AuthService {
   login(user: UserModel): Observable<any> {
     return this.http.post<any>(`${this.API_URL}/login`, user).pipe(
       map(res => {
+        console.log(res.token)
+        console.log(res.userId)
+        console.log(res.expiresIn)
         this.token = res.token
         this.userId = res.userId
         const expiresInDuration = res.expiresIn

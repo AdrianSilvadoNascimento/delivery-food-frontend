@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 
 const app = express()
-const APP_DIST_FOLDER = 'nosso-tempero/frontend'
+const APP_DIST_FOLDER = '/nosso-tempero/frontend'
 const DEFAULT_PAGE = 'index.html'
 
 const PORT = process.env.PORT || 3000
