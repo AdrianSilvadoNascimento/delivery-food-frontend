@@ -20,5 +20,5 @@ app.use((req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Servidor iniciado na porta ${PORT}`)
+  console.log(`[${APP_DIST_FOLDER}] Servidor iniciado na porta ${PORT}`)
 })
