@@ -1,24 +1,22 @@
 const express = require('express')
 const path = require('path')
 
-const app = express()
-const APP_DIST_FOLDER = '/nosso-tempero/frontend'
+const APP_DIST_FOLDER = './home/'
 const DEFAULT_PAGE = 'index.html'
 
-const PORT = process.env.PORT || 3000
+const app = express()
+const PORT = process.env.PORT || 4000
 
 app.use(express.static(__dirname))
-app.get('*', (req,res) => {
+
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, APP_DIST_FOLDER, DEFAULT_PAGE))
 })
-// app.use(express.static(__dirname + '/nosso-tempero/frontend'))
-// app.get('/*', (req, res) => {
-//   res.sendFile(__dirname + '/nosso-temper/frontend/index.html')
-// })
+
 app.use((req, res) => {
   console.error('Resource not found')
 })
 
 app.listen(PORT, () => {
-  console.log(`[${APP_DIST_FOLDER}] Servidor iniciado na porta ${PORT}`)
+  console.log(`[${APP_DIST_FOLDER}] (front-end) iniciado na porta ${PORT}`)
 })

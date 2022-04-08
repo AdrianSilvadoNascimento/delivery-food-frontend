@@ -12,7 +12,7 @@ import { environment } from '../../../environments/environment'
 })
 export class AuthService {
 
-  private readonly API_URL: string = `${environment.URL}/user`
+  private readonly API_URL: string = environment.URL + '/user'
 
   token: string
   userId: string
