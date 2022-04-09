@@ -1,11 +1,11 @@
 const express = require('express')
 const path = require('path')
 
-const APP_DIST_FOLDER = './home/'
+const APP_DIST_FOLDER = './home'
 const DEFAULT_PAGE = 'index.html'
 
 const app = express()
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 8080
 
 app.use(express.static(__dirname))
 

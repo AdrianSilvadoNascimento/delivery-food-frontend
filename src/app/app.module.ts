@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { AuthInterceptor } from './shared/auth/auth-interceptor';
 import { AuthModule } from './shared/auth/auth.module';
-import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './AngularMaterial.module';
+import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './shared/header/header.component';
-import { LoginComponent } from './shared/auth/login/login.component';
 import { MainPageComponent } from './shared/main-page/main-page.component';
-import { RegisterComponent } from './shared/auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,9 @@ import { RegisterComponent } from './shared/auth/register/register.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

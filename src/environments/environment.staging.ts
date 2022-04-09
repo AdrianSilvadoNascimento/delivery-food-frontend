@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  URL: ''
+  URL: 'https://nosso-tempero-frontend.herokuapp.com/'
 };
