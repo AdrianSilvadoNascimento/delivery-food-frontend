@@ -41,9 +41,6 @@ export class AuthService {
   login(user: UserModel): Observable<any> {
     return this.http.post<any>(`${this.API_URL}/login`, user).pipe(
       map(res => {
-        console.log(res.token)
-        console.log(res.userId)
-        console.log(res.expiresIn)
         this.token = res.token
         this.userId = res.userId
         const expiresInDuration = res.expiresIn
@@ -51,7 +48,8 @@ export class AuthService {
         this.setAuthTimer(expiresInDuration)
         const expirationDate = new Date(now.getTime() + expiresInDuration * 1000)
         this.saveAuth(this.token, this.userId, expirationDate)
-      })
+      }),
+      tap(() => console.log('User logado'))
     )
   }
 
