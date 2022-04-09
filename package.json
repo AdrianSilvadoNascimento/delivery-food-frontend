@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build_staging && node server.js",
-    "build": "ng build",
-    "build_staging": "ng build --prod --aot --build-optimizer=true --base-href=/home/ --output-path home",
+    "start": "node server.js",
+    "build": "ng build --configuration=staging --aot --build-optimizer=true --base-href=/home/ --output-path home",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
