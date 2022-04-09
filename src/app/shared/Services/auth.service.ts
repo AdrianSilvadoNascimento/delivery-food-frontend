@@ -27,9 +27,7 @@ export class AuthService {
    * @returns The register of the user
    */
   register(user: UserModel): Observable<any> {
-    return this.http.post<any>(`${this.API_URL}/register`, user).pipe(
-      tap(() => console.log('User registrado'))
-    )
+    return this.http.post<any>(`${this.API_URL}/register`, user)
   }
 
   /**
@@ -48,8 +46,7 @@ export class AuthService {
         this.setAuthTimer(expiresInDuration)
         const expirationDate = new Date(now.getTime() + expiresInDuration * 1000)
         this.saveAuth(this.token, this.userId, expirationDate)
-      }),
-      tap(() => console.log('User logado'))
+      })
     )
   }
 

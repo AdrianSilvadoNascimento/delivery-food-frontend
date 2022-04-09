@@ -46,7 +46,7 @@
         <button mat-menu-item>Cardápio</button>
         <button mat-menu-item [routerLink]="['/auth/register']">Register</button>
         <button mat-menu-item [routerLink]="['/auth/login']">Login</button>
-        <button mat-menu-item>Logout</button>
+        <button mat-menu-item (clickc)="onLogout()">Logout</button>
       </div>
     </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="appMenu">
@@ -54,3 +54,6 @@
     </button>
   </div>
 </section>
+<div *ngIf="loader.isLoading | async" class="loader-container">
+  <mat-spinner color="warn"></mat-spinner>
+</div>

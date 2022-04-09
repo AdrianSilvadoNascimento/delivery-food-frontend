@@ -1,9 +1,11 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from "@angular/core"
 
-import { MatMenuModule } from '@angular/material/menu';
-import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu'
+import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 @NgModule({
   imports: [],
@@ -11,7 +13,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatMenuModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ]
 })
 export class AngularMaterialModule {}
