@@ -1,19 +1,19 @@
-import { SpinnerInterceptorService } from './shared/Services/spinner/spinner-interceptor.service';
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { ToastrModule } from 'ngx-toastr'
 
-import { AppComponent } from './app.component';
-import { AuthInterceptor } from './shared/auth/auth-interceptor';
-import { AuthModule } from './shared/auth/auth.module';
-import { AngularMaterialModule } from './AngularMaterial.module';
-import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './shared/header/header.component';
-import { MainPageComponent } from './shared/main-page/main-page.component';
+import { AppComponent } from './app.component'
+import { AuthInterceptor } from './shared/auth/auth-interceptor'
+import { AuthModule } from './shared/auth/auth.module'
+import { AngularMaterialModule } from './AngularMaterial.module'
+import { AppRoutingModule } from './app-routing.module'
+import { HeaderComponent } from './shared/header/header.component'
+import { MainPageComponent } from './shared/main-page/main-page.component'
+import { SpinnerInterceptorService } from './shared/Services/spinner/spinner-interceptor.service'
 
 @NgModule({
   declarations: [

@@ -34,6 +34,7 @@ section {
   background-color: #001219;
 
   h1 {
+    cursor: pointer;
     position: relative;
     top: 4vh;
     font-family: 'Ginsthies';
@@ -64,11 +65,17 @@ section {
 
   ul {
     list-style: none;
+    .auth-manager {
+      display: flex;
+    }
     li {
       margin-left: 30px;
       a {
         color: #FFF;
         text-decoration: underline;
+      }
+      span {
+        cursor: pointer;
       }
     }
   }

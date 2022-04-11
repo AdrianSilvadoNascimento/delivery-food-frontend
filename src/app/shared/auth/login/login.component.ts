@@ -1,9 +1,10 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 
+import { ToastrService } from 'ngx-toastr'
+
 import { AuthService } from './../../Services/auth.service'
 import { UserModel } from '../../Models/user-model'
-import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent {
     private router: Router,
     private toastr: ToastrService) {
   }
+
   onLogin(): void {
     this.authService.login(this.userModel).subscribe(() => {
       this.toastr.success('You loggeding successfuly', 'Success')

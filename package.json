@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build --configuration=staging --aot --build-optimizer=true --base-href=/home/ --output-path home",
+    "build": "ng build --configuration=production --aot --build-optimizer=true --base-href=/home/ --output-path home",
+    "build_staging": "ng build --configuration=staging --aot --build-optimizer=true --base-href=/home/ --output-path home",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

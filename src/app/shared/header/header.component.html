@@ -24,17 +24,21 @@
   <div class="user-section">
     <ul class="d-flex justify-content-end">
       <li class="p-2">
-        <p>Olá, Usuário <i class="fas fa-user-circle"></i></p>
+        <p>Olá, {{ username }} <i class="fas fa-user-circle"></i></p>
       </li>
-      <li class="p-2">
-        <a [routerLink]="['/auth/register']"><u>Register</u></a>
-      </li>
-      <li class="p-2">
-        <a [routerLink]="['/auth/login']"><u>Login</u></a>
-      </li>
-      <li class="p-2">
-        <a href=""><u>Logout</u></a>
-      </li>
+      <div class="auth-manager" *ngIf="!authService.loggedIn(); else isLoggedin">
+        <li class="p-2">
+          <a [routerLink]="['/auth/register']"><u>Register</u></a>
+        </li>
+        <li class="p-2">
+          <a [routerLink]="['/auth/login']"><u>Login</u></a>
+        </li>
+      </div>
+      <ng-template #isLoggedin>
+        <li class="p-2">
+          <span (click)="onLogout()"><u>Logout</u></span>
+        </li>
+      </ng-template>
     </ul>
   </div>
   <div class="menu-mobile">
@@ -44,9 +48,13 @@
         <button mat-menu-item>Os Mais Pedidos</button>
         <button mat-menu-item>Fale Conosco</button>
         <button mat-menu-item>Cardápio</button>
-        <button mat-menu-item [routerLink]="['/auth/register']">Register</button>
-        <button mat-menu-item [routerLink]="['/auth/login']">Login</button>
-        <button mat-menu-item (clickc)="onLogout()">Logout</button>
+        <div *ngIf="!authService.loggedIn(); else isLoggedin">
+          <button mat-menu-item [routerLink]="['/auth/register']">Register</button>
+          <button mat-menu-item [routerLink]="['/auth/login']">Login</button>
+        </div>
+        <ng-template #isLoggedin>
+          <button mat-menu-item (click)="onLogout()">Logout</button>
+        </ng-template>
       </div>
     </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="appMenu">

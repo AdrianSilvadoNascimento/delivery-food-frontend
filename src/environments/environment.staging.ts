@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  URL: 'https://nosso-tempero-backend.herokuapp.com'
+  URL: 'http://localhost:3000'
 };

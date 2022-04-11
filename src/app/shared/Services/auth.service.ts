@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
-import { map, tap } from 'rxjs/operators'
+import { Observable, Subject } from 'rxjs'
+import { map } from 'rxjs/operators'
 
 import { UserModel } from './../Models/user-model'
 import { environment } from '../../../environments/environment'
@@ -14,8 +14,11 @@ export class AuthService {
 
   private readonly API_URL: string = environment.URL + '/user'
 
+  private emissor$ = new Subject<string>()
+
   token: string
   userId: string
+  username: string
   tokenTimer: any
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -41,6 +44,7 @@ export class AuthService {
       map(res => {
         this.token = res.token
         this.userId = res.userId
+        this.emitirValor(res.username)
         const expiresInDuration = res.expiresIn
         const now = new Date()
         this.setAuthTimer(expiresInDuration)
@@ -48,6 +52,24 @@ export class AuthService {
         this.saveAuth(this.token, this.userId, expirationDate)
       })
     )
+  }
+
+  /**
+   * To emmit the username value
+   *
+   * @param value - Is the username value
+   */
+  emitirValor(value: string) {
+    this.emissor$.next(value)
+  }
+
+  /**
+   * To get the username of the user
+   *
+   * @returns An Observable with the username
+   */
+  getUsername(): Observable<string> {
+    return this.emissor$.asObservable()
   }
 
   /**
