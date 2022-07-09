@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable, Subject } from 'rxjs'
@@ -11,10 +11,9 @@ import { environment } from '../../../environments/environment'
   providedIn: 'root'
 })
 export class AuthService {
-
   private readonly API_URL: string = environment.URL + '/user'
 
-  private emissor$ = new Subject<string>()
+  emissor$ = new Subject<string>()
 
   token: string
   userId: string
@@ -26,7 +25,7 @@ export class AuthService {
   /**
    * To register a new user
    *
-   * @param user - Is the user data
+   * @param {UserModel} user - Is the user data
    * @returns The register of the user
    */
   register(user: UserModel): Observable<any> {
@@ -36,7 +35,7 @@ export class AuthService {
   /**
    * To loggin the user
    *
-   * @param user - Is the user data
+   * @param {UserModel} user - Is the user data
    * @returns The user data with time to expire session and the id
    */
   login(user: UserModel): Observable<any> {
@@ -44,7 +43,7 @@ export class AuthService {
       map(res => {
         this.token = res.token
         this.userId = res.userId
-        this.emitirValor(res.username)
+        this.emitName(res.username)
         const expiresInDuration = res.expiresIn
         const now = new Date()
         this.setAuthTimer(expiresInDuration)
@@ -59,7 +58,7 @@ export class AuthService {
    *
    * @param value - Is the username value
    */
-  emitirValor(value: string) {
+   emitName(value: string) {
     this.emissor$.next(value)
   }
 

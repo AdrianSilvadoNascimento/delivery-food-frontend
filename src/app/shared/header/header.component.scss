@@ -118,7 +118,6 @@ section {
 
   div.menu-mobile {
     display: none;
-    width: 45px;
   }
 }
 
@@ -137,29 +136,24 @@ section {
     width: 100%;
     height: 20%;
 
-    div.header-text {
-       display: block;
-       h1 {
-        font-size: 3em;
-        text-align: center;
-        position: relative;
-        top: 10vh;
-        left: 50%;
-        transform: translateX(-50%);
-       }
-   }
-
-    div.menu-mobile {
-      display: block;
-      position: absolute;
-      left: 85%;
-      top: 5vh;
-
-      div.buttons-mobile {
-        text-align: center;
-      }
-
+  div.header-text {
+    display: block;
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      position: relative;
+      top: 10vh;
+      left: 50%;
+      transform: translateX(-50%);
     }
+  }
+
+  div.menu-mobile {
+    display: block;
+    position: absolute;
+    left: 85%;
+    top: 5vh;
+  }
 
     div.user-section {
       display: none;

@@ -12,14 +12,13 @@ import { UserModel } from '../../Models/user-model'
   styleUrls: ['../auth.component.scss']
 })
 export class LoginComponent {
-
   userModel: UserModel = new UserModel()
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private toastr: ToastrService) {
-  }
+    private toastr: ToastrService,
+  ) {}
 
   onLogin(): void {
     this.authService.login(this.userModel).subscribe(() => {

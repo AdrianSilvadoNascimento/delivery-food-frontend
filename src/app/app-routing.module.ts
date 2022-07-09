@@ -1,11 +1,13 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
 
-import { AuthGuard } from './shared/auth/auth.guard';
-import { MainPageComponent } from './shared/main-page/main-page.component';
+import { AuthGuard } from './shared/auth/auth.guard'
+import { CardapioComponent } from './shared/cardapio/cardapio.component'
+import { MainPageComponent } from './shared/main-page/main-page.component'
 
 const routes: Routes = [
   { path: '', component: MainPageComponent},
+  { path: 'cardapio', component: CardapioComponent },
   { path: '**', redirectTo: ''}
 ]
 

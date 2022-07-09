@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Inject, Injectable, OnInit } from '@angular/core'
 
 import { AuthService } from './../Services/auth.service'
 import { SpinnerService } from './../Services/spinner/spinner.service'
@@ -13,15 +13,14 @@ export class HeaderComponent implements OnInit {
   username: string = 'Visitante'
   userIsLoggedin: boolean
 
-  constructor(public authService: AuthService, public loader: SpinnerService) { }
+  constructor(public authService: AuthService, public loader: SpinnerService) {
+    this.authService.getUsername().subscribe(name => {
+      this.username = name
+    })
+  }
 
   ngOnInit(): void {
     this.userIsLoggedin = this.authService.loggedIn()
-    this.authService.getUsername().subscribe(name => {
-      if(this.userIsLoggedin && localStorage.length > 0) {
-        this.username = name
-      }
-    })
   }
 
   onLogout(): void {

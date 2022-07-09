@@ -17,7 +17,7 @@
         <a href="">Fale Conosco</a>
       </li>
       <li class="p-2">
-        <a href="">Cardápio</a>
+        <a [routerLink]="['/cardapio']">Cardápio</a>
       </li>
     </ul>
   </nav>
@@ -47,13 +47,13 @@
         <button mat-menu-item>Ofertas do Dia</button>
         <button mat-menu-item>Os Mais Pedidos</button>
         <button mat-menu-item>Fale Conosco</button>
-        <button mat-menu-item>Cardápio</button>
+        <button mat-menu-item [routerLink]="['/cardapio']">Cardápio</button>
         <div *ngIf="!authService.loggedIn(); else isLoggedin">
           <button mat-menu-item [routerLink]="['/auth/register']">Register</button>
           <button mat-menu-item [routerLink]="['/auth/login']">Login</button>
         </div>
         <ng-template #isLoggedin>
-          <button mat-menu-item (click)="onLogout()">Logout</button>
+          <a mat-menu-item (click)="onLogout()">Logout</a>
         </ng-template>
       </div>
     </mat-menu>

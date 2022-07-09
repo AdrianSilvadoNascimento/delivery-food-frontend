@@ -11,6 +11,7 @@ import { AuthInterceptor } from './shared/auth/auth-interceptor'
 import { AuthModule } from './shared/auth/auth.module'
 import { AngularMaterialModule } from './AngularMaterial.module'
 import { AppRoutingModule } from './app-routing.module'
+import { CardapioComponent } from './shared/cardapio/cardapio.component'
 import { HeaderComponent } from './shared/header/header.component'
 import { MainPageComponent } from './shared/main-page/main-page.component'
 import { SpinnerInterceptorService } from './shared/Services/spinner/spinner-interceptor.service'
@@ -20,6 +21,7 @@ import { SpinnerInterceptorService } from './shared/Services/spinner/spinner-int
     AppComponent,
     MainPageComponent,
     HeaderComponent,
+    CardapioComponent,
   ],
   imports: [
     AuthModule,
